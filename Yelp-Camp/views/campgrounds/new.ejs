@@ -1,0 +1,40 @@
+<% layout('layout/BoilerPlate')%>
+    <div class="row">
+        <h1 class="text-center">New Campground</h1>
+
+        <div class="col-6 offset-3">
+            <form action="/campgrounds" method="POST" class="needs-validation" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label class="form-label" for="title">Title</label>
+                    <input required class="form-control" type="text" id="title" name="campground[title]" />
+                </div>
+
+                <div class="mb-3 custom-file">
+                    <label for="formFile " class="form-label custom-file-label">Add Images</label>
+                    <input class="form-control" name="Images" type="file" id="formFile Images validationDefault01" multiple>
+                </div>
+                <div class="mb-3 ">
+                    <label class="form-label " for="Campground-Price ">Camground Price</label>
+
+                    <div class="input-group mb-3 ">
+                        <span class="input-group-text " id="price-label ">$</span>
+                        <input required type="text " class="form-control " name="campground[price]" id=" price " placeholder="0.00 " aria-label="price " aria-describedby=" " />
+                    </div>
+                </div>
+                <div class="mb-3 ">
+                    <label class="form-label " for="location ">Location</label>
+                    <input required class="form-control " type="text " id="location " name="campground[location]" />
+                </div>
+                <div class="mb-3 ">
+                    <label class="form-label " for="location ">Description</label>
+                    <textarea required class="form-control " type="text " id="location " name="campground[description]"></textarea>
+                </div>
+                <div class="mb-3 ">
+                    <button class="btn btn-success ">Add Campground</button>
+                </div>
+            </form>
+            <a href="/campgrounds ">All Campgrounds</a>
+        </div>
+    </div>
+
+    <!--  <a href="/campgrounds/:id/edit ">Edit</a> -->

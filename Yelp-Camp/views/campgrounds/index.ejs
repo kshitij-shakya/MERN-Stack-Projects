@@ -1,0 +1,43 @@
+<% layout('layout/BoilerPlate')%>
+    <div id="map" class='ClusterMap'></div>
+    <div class="card-header">
+        <h1>All Campgrounds</h1>
+    </div>
+    <!-- <div>
+        <a href="/campgrounds/new">Add Campground</a>
+    </div> -->
+    <div class="card">
+        <div class="card-body">
+            <h2><a href="/campgrounds/new">Add New Campground</a></h2>
+        </div>
+    </div>
+    <% for (let campground of campgrounds){%>
+        <div class="card mb-3">
+            <div class="row">
+                <div class="col-md-4">
+                    <img class="img-fluid" alt="" src="<%=campground.Images[0].Url%>" class="image" />
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <%= campground.title %>
+                        </h5>
+                        <p class="card-text">
+                            <%= campground.description %>
+                        </p>
+                        <p class="card-text">
+                            <small class="text-muted"><%= campground.location%></small>
+                        </p>
+                        <a class="btn btn-primary" href="/campgrounds/<%=campground._id%>">View <%=campground.title%></a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  <% }%>
+  <script>
+    const MapToken = '<%-process.env.MAPBOX_TOKEN%>';
+    const campgrounds = { features: <%- JSON.stringify(campgrounds) %>}
+
+</script>
+  <script src="/JavaScript/ClusterMap.js"></script>
